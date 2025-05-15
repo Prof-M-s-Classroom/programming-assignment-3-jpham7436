@@ -27,6 +27,21 @@ Run directly from the IDE.
 
 | Prim’s MST Overall 0 <b>Big O (V<sup>2</sup>logV)</b> where V is the number of vertices. This is because building the MSP requires us to check all the neighbors (V) of every vertex (V again). Thus, checking V neighbors of V vertices gets us that V<sup>2</sup> part. But also, when we're checking these neighbors, we are inserting and lowering the keys of certain vertices within the heap, which both cost log(n) time. This makes the final time complexity <b>V<sup>2</sup>logV.
 
-## Test Case Description
+## Assumptions
+- Weighted, undirected, connected graph
+- Weights of edges cannot be 0 (it is a simple change to support 0-weight edges though)
 
-Input:  
+## Test Case Description
+Input:   
+Graph g(5);
+    g.addEdge(0, 1, 2);
+    g.addEdge(0, 3, 6);
+    g.addEdge(1, 2, 3);
+    g.addEdge(1, 3, 8);
+    g.addEdge(1, 4, 5);
+    g.addEdge(2, 4, 7);
+    g.addEdge(3, 4, 9);
+
+## Test Plan
+- I also test edge cases where there are only 1 or 0 vertices
+- Cases with 3,4,5,6, and 7 vertices
