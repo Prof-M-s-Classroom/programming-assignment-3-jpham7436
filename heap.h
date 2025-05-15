@@ -64,12 +64,14 @@ private:
     int size;
 
     void swapPositions(int x, int y) {
-        position[ heapArray[x] ] = y;
-        position [ heapArray[y] ] = x;
+        int vx = heapArray[x];
+        int vy = heapArray[y];
 
-        int temp = heapArray[x];
-        heapArray[y] = heapArray[x];
-        heapArray[x] = temp;
+        heapArray[x] = vy;
+        heapArray[y] = vx;
+
+        position[vx] = y;
+        position[vy] = x;
     }
 
     void upHeapify(int idx) {
